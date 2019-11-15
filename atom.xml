@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://l-roc.github.io/"/>
   <updated>2019-11-14T09:07:21.179Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://l-roc.github.io/</id>
   
   <author>
     <name>Roc</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/11/14/hello-world/"/>
-    <id>http://yoursite.com/2019/11/14/hello-world/</id>
+    <link href="https://l-roc.github.io/2019/11/14/hello-world/"/>
+    <id>https://l-roc.github.io/2019/11/14/hello-world/</id>
     <published>2019-11-14T09:07:21.179Z</published>
     <updated>2019-11-14T09:07:21.179Z</updated>
     
@@ -33,7 +33,7 @@
     
     
     
-      <category term="hello world!" scheme="http://yoursite.com/tags/hello-world/"/>
+      <category term="hello world!" scheme="https://l-roc.github.io/tags/hello-world/"/>
     
   </entry>
   
