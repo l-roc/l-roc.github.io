@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://l-roc.github.io/"/>
-  <updated>2020-10-01T16:44:58.071Z</updated>
+  <updated>2020-10-02T08:15:54.036Z</updated>
   <id>https://l-roc.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode 771.宝石与石头</title>
+    <link href="https://l-roc.github.io/2020/10/02/leetcode-771-%E5%AE%9D%E7%9F%B3%E4%B8%8E%E7%9F%B3%E5%A4%B4/"/>
+    <id>https://l-roc.github.io/2020/10/02/leetcode-771-%E5%AE%9D%E7%9F%B3%E4%B8%8E%E7%9F%B3%E5%A4%B4/</id>
+    <published>2020-10-02T08:03:47.000Z</published>
+    <updated>2020-10-02T08:15:54.036Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="leetcode-771-宝石与石头"><a href="#leetcode-771-宝石与石头" class="headerlink" title="leetcode 771.宝石与石头"></a>leetcode 771.宝石与石头</h1><p> 给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。<br> J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此”a”和”A”是不同类型的石头。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/jewels-and-stones" target="_blank" rel="noopener">leecode 771</a></p><p>示例 1:</p><blockquote><p>输入: J = “aA”, S = “aAAbbbb”<br>输出: 3</p></blockquote><p>示例 2:</p><blockquote><p>输入: J = “z”, S = “ZZ”<br>输出: 0</p></blockquote><p>注意:</p><blockquote><p>S 和 J 最多含有50个字母。<br>J 中的字符不重复。</p></blockquote><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unordered_set&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * @brief leetcode-771-宝石与石头</span></span><br><span class="line"><span class="comment">     * @param J 石头中宝石的类型    eg:"aA"</span></span><br><span class="line"><span class="comment">     * @param S 拥有的石头   eg:"aAAbbbb"</span></span><br><span class="line"><span class="comment">     * @return 拥有的石头中为宝石的数目 eg:3 (aAA总共三个宝石）</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">numJewelsInStones</span><span class="params">(<span class="built_in">string</span> J, <span class="built_in">string</span> S)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">char</span>&gt; hashSet;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i:J) &#123;</span><br><span class="line">            hashSet.insert(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i:S) &#123;</span><br><span class="line">            <span class="keyword">if</span> (hashSet.<span class="built_in">find</span>(i) != hashSet.<span class="built_in">end</span>()) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> J=<span class="string">"aA"</span>;</span><br><span class="line">    <span class="built_in">string</span> S=<span class="string">"aAAbbbb"</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; solution.numJewelsInStones(J,S);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;leetcode-771-宝石与石头&quot;&gt;&lt;a href=&quot;#leetcode-771-宝石与石头&quot; class=&quot;headerlink&quot; title=&quot;leetcode 771.宝石与石头&quot;&gt;&lt;/a&gt;leetcode 771.宝石与石头&lt;/h1&gt;&lt;p&gt; 给定字符串
+      
+    
+    </summary>
+    
+    
+    
+      <category term="leetcode" scheme="https://l-roc.github.io/tags/leetcode/"/>
+    
+      <category term="C++" scheme="https://l-roc.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode LCP19.秋叶收藏集</title>
