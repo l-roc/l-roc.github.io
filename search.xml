@@ -4,7 +4,7 @@
     <title>leetcode 771.宝石与石头</title>
     <url>/2020/10/02/leetcode-771-%E5%AE%9D%E7%9F%B3%E4%B8%8E%E7%9F%B3%E5%A4%B4/</url>
     <content><![CDATA[<h1 id="leetcode-771-宝石与石头"><a href="#leetcode-771-宝石与石头" class="headerlink" title="leetcode 771.宝石与石头"></a>leetcode 771.宝石与石头</h1><p> 给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。<br> J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此”a”和”A”是不同类型的石头。</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/jewels-and-stones" target="_blank" rel="noopener">leecode 771</a></p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/jewels-and-stones" target="_blank" rel="noopener">leetcode 771</a></p>
 <p>示例 1:</p>
 <blockquote>
 <p>输入: J = “aA”, S = “aAAbbbb”<br>输出: 3</p>
@@ -49,8 +49,8 @@
 
 ]]></content>
       <tags>
+        <tag>leetcode</tag>
         <tag>C++</tag>
-        <tag>leecode</tag>
       </tags>
   </entry>
   <entry>
@@ -60,8 +60,8 @@
 
 ]]></content>
       <tags>
+        <tag>leetcode</tag>
         <tag>C++</tag>
-        <tag>leecode</tag>
       </tags>
   </entry>
   <entry>
